@@ -1,0 +1,15 @@
+{
+  "name": "mfn",
+  "description": "MFN Consulting public website and template",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-copy": "latest",
+    "grunt-contrib-less": "latest",
+    "load-grunt-tasks": "latest"
+  },
+  "engines": {
+    "node": "~0.10.1"
+  }
+}
