@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
+    aws: grunt.file.readJSON("../grunt-aws.json"),
 
     clean: {
       dist: ['dist']
@@ -35,12 +36,29 @@ module.exports = function (grunt) {
         src: ["images/**"],
         dest: "dist/"
       }
-    }
+    },
 
+    s3: {
+      options: {
+        key: '<%= aws.mfn.key %>',
+        secret: '<%= aws.mfn.secret %>',
+        bucket: '<%= aws.mfn.bucket %>',
+        access: 'public-read'
+      },
+      publish: {
+        upload: [
+          {
+            src: 'dist/**',
+            dest: '/',
+            rel: 'dist/'
+          }
+        ]
+      }
+    }
   });
 
   // These plugins provide necessary tasks.
   require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
-  grunt.registerTask("default", ["less", "copy"]);
+  grunt.registerTask("default", ["less", "copy", "s3:publish"]);
 };

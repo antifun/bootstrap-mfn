@@ -7,6 +7,7 @@
     "grunt-contrib-clean": "latest",
     "grunt-contrib-copy": "latest",
     "grunt-contrib-less": "latest",
+    "grunt-s3": "latest",
     "load-grunt-tasks": "latest"
   },
   "engines": {
