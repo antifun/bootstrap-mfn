@@ -8,7 +8,8 @@
     "grunt-contrib-copy": "latest",
     "grunt-contrib-less": "latest",
     "grunt-s3": "latest",
-    "load-grunt-tasks": "latest"
+    "load-grunt-tasks": "latest",
+    "font-awesome": "~4.1.0"
   },
   "engines": {
     "node": "~0.10.1"
